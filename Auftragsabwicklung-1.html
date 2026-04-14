@@ -1,27 +1,87 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html>
 <head>
-<title>Page 1</title>
+<meta charset="UTF-8">
+<title>Presentation</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<style type="text/css">
-<!--
-	p {margin: 0; padding: 0;}	.ft00{font-size:95px;font-family:ABCDEE+Gill Sans MT,BoldItalic;color:#00af50;}
-	.ft01{font-size:30px;font-family:ABCDEE+Gill Sans MT;color:#ffffff;}
--->
+<style>
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial;
+}
+
+.slide {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+}
+
+button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  z-index: 999;
+}
+
+/* твой стиль */
+.ft00 {
+  font-size:95px;
+  font-family:Arial;
+  color:#00af50;
+}
+.ft01 {
+  font-size:30px;
+  color:#ffffff;
+}
 </style>
 </head>
-<body bgcolor="#A0A0A0" vlink="blue" link="blue">
-<div id="page1-div" style="position:relative;width:1440px;height:810px;">
-<img width="1440" height="810" src="Auftragsabwicklung001.png" alt="background image"/>
-<p style="position:absolute;top:77px;left:182px;white-space:nowrap" class="ft00"><i><b>AUFTRAGSABWICKLUNG</b></i></p>
-<p style="position:absolute;top:545px;left:223px;white-space:nowrap" class="ft01">Beschaffung&#160;</p>
-<p style="position:absolute;top:581px;left:273px;white-space:nowrap" class="ft01">der&#160;</p>
-<p style="position:absolute;top:617px;left:226px;white-space:nowrap" class="ft01">Materialien</p>
-<p style="position:absolute;top:501px;left:663px;white-space:nowrap" class="ft01">Auswahl&#160;der&#160;</p>
-<p style="position:absolute;top:537px;left:670px;white-space:nowrap" class="ft01">Lieferanten</p>
-<p style="position:absolute;top:556px;left:1086px;white-space:nowrap" class="ft01">Durchführung&#160;</p>
-<p style="position:absolute;top:592px;left:1088px;white-space:nowrap" class="ft01">der&#160;Aufträgen</p>
+
+<body>
+
+<!-- СЛАЙД 1 -->
+<div class="slide active">
+
+<img src="Auftragsabwicklung001.png" style="width:100%;height:100%;object-fit:cover;position:absolute;">
+
+<p style="position:absolute;top:77px;left:182px;" class="ft00"><b>AUFTRAGSABWICKLUNG</b></p>
+
+<p style="position:absolute;top:545px;left:223px;" class="ft01">Beschaffung der Materialien</p>
+<p style="position:absolute;top:501px;left:663px;" class="ft01">Auswahl der Lieferanten</p>
+<p style="position:absolute;top:556px;left:1086px;" class="ft01">Durchführung der Aufträgen</p>
+
 </div>
+
+<!-- СЛАЙД 2 -->
+<div class="slide">
+  <h1>Слайд 2</h1>
+</div>
+
+<!-- СЛАЙД 3 -->
+<div class="slide">
+  <h1>Слайд 3</h1>
+</div>
+
+<button onclick="next()">Next →</button>
+
+<script>
+let i = 0;
+const slides = document.querySelectorAll(".slide");
+
+function next() {
+  slides[i].classList.remove("active");
+  i = (i + 1) % slides.length;
+  slides[i].classList.add("active");
+}
+</script>
+
 </body>
 </html>
