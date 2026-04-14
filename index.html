@@ -1,1 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Presentation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .slide {
+      display: none;
+      text-align: center;
+      font-size: 40px;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      position: fixed;
+      bottom: 20px;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
 
+<body>
+
+<div class="slide active">Слайд 1: Привет 👋</div>
+<div class="slide">Слайд 2: Это моя презентация</div>
+<div class="slide">Слайд 3: Спасибо!</div>
+
+<button onclick="nextSlide()">Далее</button>
+
+<script>
+let i = 0;
+const slides = document.querySelectorAll('.slide');
+
+function nextSlide() {
+  slides[i].classList.remove('active');
+  i = (i + 1) % slides.length;
+  slides[i].classList.add('active');
+}
+</script>
+
+</body>
+</html>
