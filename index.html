@@ -7,9 +7,9 @@
 <style>
 body {
   margin: 0;
+  font-family: Arial;
   background: #111;
   color: white;
-  font-family: Arial;
 }
 
 .slide {
@@ -29,18 +29,13 @@ button {
   right: 20px;
   padding: 10px 20px;
   font-size: 18px;
-  z-index: 999;
+  z-index: 10;
 }
 
-/* твой стиль */
-.ft00 {
-  font-size:95px;
-  font-family:Arial;
-  color:#00af50;
-}
-.ft01 {
-  font-size:30px;
-  color:#ffffff;
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
 </head>
@@ -49,25 +44,21 @@ button {
 
 <!-- СЛАЙД 1 -->
 <div class="slide active">
-
-<img src="Auftragsabwicklung001.png" style="width:100%;height:100%;object-fit:cover;position:absolute;">
-
-<p style="position:absolute;top:77px;left:182px;" class="ft00"><b>AUFTRAGSABWICKLUNG</b></p>
-
-<p style="position:absolute;top:545px;left:223px;" class="ft01">Beschaffung der Materialien</p>
-<p style="position:absolute;top:501px;left:663px;" class="ft01">Auswahl der Lieferanten</p>
-<p style="position:absolute;top:556px;left:1086px;" class="ft01">Durchführung der Aufträgen</p>
-
+  <img src="Auftragsabwicklung001.png">
 </div>
 
 <!-- СЛАЙД 2 -->
 <div class="slide">
-  <h1>Слайд 2</h1>
+  <h1 style="text-align:center;padding-top:40vh;">
+    Слайд 2
+  </h1>
 </div>
 
 <!-- СЛАЙД 3 -->
 <div class="slide">
-  <h1>Слайд 3</h1>
+  <h1 style="text-align:center;padding-top:40vh;">
+    Слайд 3
+  </h1>
 </div>
 
 <button onclick="next()">Next →</button>
